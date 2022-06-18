@@ -1,7 +1,7 @@
 use [AddressBook]
 
-Create Procedure RetrieveDetails
-@ID int
+Alter Procedure RetrieveDetails
+
 
 AS
 SET XACT_ABORT ON;
@@ -13,7 +13,7 @@ BEGIN TRANSACTION;
 SET NOCOUNT ON;
 
 declare @result bit = 0;
-Select * from AddressDetails where ID = @ID
+Select * from AddressDetails
 
 Commit Transaction
 Set @result = 1;
