@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddressBookADO", "AddressBookADO\AddressBookADO.csproj", "{C0CFBD8D-9DF3-4EF4-9837-BE9A066FC88D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddressBookADO", "AddressBookADO\AddressBookADO.csproj", "{C0CFBD8D-9DF3-4EF4-9837-BE9A066FC88D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddressBookTest", "AddressBookTest\AddressBookTest.csproj", "{0F67ADF0-6DEE-44BC-B0E8-E5AE2760F86A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C0CFBD8D-9DF3-4EF4-9837-BE9A066FC88D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0CFBD8D-9DF3-4EF4-9837-BE9A066FC88D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0CFBD8D-9DF3-4EF4-9837-BE9A066FC88D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F67ADF0-6DEE-44BC-B0E8-E5AE2760F86A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F67ADF0-6DEE-44BC-B0E8-E5AE2760F86A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F67ADF0-6DEE-44BC-B0E8-E5AE2760F86A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F67ADF0-6DEE-44BC-B0E8-E5AE2760F86A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
