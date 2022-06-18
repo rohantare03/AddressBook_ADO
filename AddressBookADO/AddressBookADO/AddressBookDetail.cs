@@ -87,8 +87,7 @@ namespace AddressBookADO
                 using (connection)
                 {
                     SqlCommand command = new SqlCommand("RetrieveDetails", connection);
-                    command.CommandType = CommandType.StoredProcedure;
-                    //command.Parameters.AddWithValue("@ID", address.ID);
+                    command.CommandType = CommandType.StoredProcedure;                    
                     connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
                     if (reader.HasRows)
@@ -117,6 +116,41 @@ namespace AddressBookADO
                 throw new AddressException(AddressException.ExceptionType.CONTACT_NOT_FOUND, "Contact not found");
             }
             return list;
+        }
+        public bool UpdateDetails(AddressBook address)
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+            try
+            {
+                using (connection)
+                {
+                    SqlCommand command = new SqlCommand("Edit_Details", connection);
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@ID", address.ID);
+                    command.Parameters.AddWithValue("@FirstName", address.FirstName);
+                    command.Parameters.AddWithValue("@LastName", address.LastName);
+                    command.Parameters.AddWithValue("@Address", address.Address);
+                    command.Parameters.AddWithValue("@City", address.City);
+                    command.Parameters.AddWithValue("@State", address.State);
+                    command.Parameters.AddWithValue("@Zip", address.Zip);
+                    command.Parameters.AddWithValue("@PhoneNumber", address.PhoneNumber);
+                    command.Parameters.AddWithValue("@Email", address.Email);
+                    address = new AddressBook();
+                    connection.Open();
+                    var result = command.ExecuteNonQuery();
+                    connection.Close();
+                    if (result != 0)
+                    {
+                        Console.WriteLine("Contact is Updated");
+                        return true;
+                    }
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                throw new AddressException(AddressException.ExceptionType.CONTACT_NOT_FOUND, "Contact not found");
+            }
         }
     }
 }
