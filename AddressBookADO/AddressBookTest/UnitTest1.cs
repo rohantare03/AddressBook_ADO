@@ -60,5 +60,16 @@ namespace AddressBookTest
             bool result = addressBookDetail.UpdateDetails(address);
             Assert.AreEqual(expected, result);
         }
+        //<summary>
+        //TC 5 : Remove Details
+        //</summary>
+        [Test]
+        public void Remove_AddressBook_Details()
+        {
+            bool expected = true;
+            address.ID = 6;
+            bool result = addressBookDetail.RemoveContact(address);
+            Assert.AreEqual(expected, result);
+        }
     }
 }

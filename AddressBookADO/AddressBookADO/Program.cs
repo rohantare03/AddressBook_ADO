@@ -14,6 +14,8 @@
                 Console.WriteLine("2: For Close Connection");
                 Console.WriteLine("3: Insert Addressbook Details");
                 Console.WriteLine("4: For retrieve AddressBook Details");
+                Console.WriteLine("5: For Update Addressbook Details");
+                Console.WriteLine("6: To Remove AddressBook Details");
                 Console.WriteLine("0: For Exit");
                 option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
@@ -88,6 +90,12 @@
                         string email1 = Console.ReadLine();
                         address.Email = email1;
                         addressBookDetail.UpdateDetails(address);
+                        break;
+                    case 6:
+                        Console.WriteLine("Enter ID");
+                        int Id = Convert.ToInt32(Console.ReadLine());
+                        address.ID = Id;
+                        addressBookDetail.RemoveContact(address);
                         break;
                     default:
                         Console.WriteLine("Enter a Valid Input");

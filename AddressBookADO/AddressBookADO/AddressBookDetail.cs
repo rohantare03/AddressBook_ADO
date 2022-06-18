@@ -152,5 +152,30 @@ namespace AddressBookADO
                 throw new AddressException(AddressException.ExceptionType.CONTACT_NOT_FOUND, "Contact not found");
             }
         }
+        public bool RemoveContact(AddressBook address)
+        {
+            try
+            {
+                using (connection)
+                {
+                    SqlCommand command = new SqlCommand("DeleteDetails", connection);
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@ID", address.ID);
+                    connection.Open();
+                    var result = command.ExecuteNonQuery();
+                    if (result != 0)
+                    {
+                        Console.WriteLine("Contact is Deleted");
+                        return true;
+                    }
+                    return false;
+                    connection.Close();
+                }
+            }
+            catch (Exception)
+            {
+                throw new AddressException(AddressException.ExceptionType.CONTACT_NOT_FOUND, "Contact not found");
+            }
+        }
     }
 }
