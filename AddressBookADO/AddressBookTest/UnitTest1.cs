@@ -31,5 +31,15 @@ namespace AddressBookTest
             var actual = addressBookDetail.InsertAddressData(address);
             Assert.AreEqual(expected, actual);
         }
+        //<summary>
+        //TC 3 : Retrieve Details
+        //</summary>
+        [Test]
+        public void Retrive_AddressBook_Details()
+        {
+            int expected = 4;
+            var result = addressBookDetail.RetrieveAddressBookDetails();
+            Assert.AreEqual(expected, result.Count);
+        }
     }
 }

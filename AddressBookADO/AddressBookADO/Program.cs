@@ -13,6 +13,7 @@
                 Console.WriteLine("1: For Establish Connection");
                 Console.WriteLine("2: For Close Connection");
                 Console.WriteLine("3: Insert Addressbook Details");
+                Console.WriteLine("4: For retrieve AddressBook Details");
                 Console.WriteLine("0: For Exit");
                 option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
@@ -54,6 +55,9 @@
                         string email = Console.ReadLine();
                         address.Email = email;
                         addressBookDetail.InsertAddressData(address);
+                        break;
+                    case 4:
+                        addressBookDetail.RetrieveAddressBookDetails();
                         break;
                     default:
                         Console.WriteLine("Enter a Valid Input");
