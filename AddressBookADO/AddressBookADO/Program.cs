@@ -16,6 +16,7 @@
                 Console.WriteLine("4: For retrieve AddressBook Details");
                 Console.WriteLine("5: For Update Addressbook Details");
                 Console.WriteLine("6: To Remove AddressBook Details");
+                Console.WriteLine("7: To retrieve by city and state name");
                 Console.WriteLine("0: For Exit");
                 option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
@@ -96,6 +97,14 @@
                         int Id = Convert.ToInt32(Console.ReadLine());
                         address.ID = Id;
                         addressBookDetail.RemoveContact(address);
+                        break;
+                    case 7:
+                        Console.WriteLine("Enter city and state");
+                        string cityname = Console.ReadLine();
+                        address.City = cityname;
+                        string statename = Console.ReadLine();
+                        address.State = statename;
+                        addressBookDetail.GetDataFromCityAndState(address);
                         break;
                     default:
                         Console.WriteLine("Enter a Valid Input");

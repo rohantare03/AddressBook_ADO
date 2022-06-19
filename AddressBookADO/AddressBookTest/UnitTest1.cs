@@ -71,5 +71,17 @@ namespace AddressBookTest
             bool result = addressBookDetail.RemoveContact(address);
             Assert.AreEqual(expected, result);
         }
+        //<summary>
+        //TC 6 : Retrieve Details by city and state
+        //</summary>
+        [Test]
+        public void Retrive_AddressBook_Details_By_CityState()
+        {
+            bool expected = true;          
+            address.City = "Mumbai";
+            address.State = "MH";
+            bool actual = addressBookDetail.GetDataFromCityAndState(address);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
