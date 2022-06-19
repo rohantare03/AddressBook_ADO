@@ -16,7 +16,8 @@
                 Console.WriteLine("4: For retrieve AddressBook Details");
                 Console.WriteLine("5: For Update Addressbook Details");
                 Console.WriteLine("6: To Remove AddressBook Details");
-                Console.WriteLine("7: To retrieve by city and state name");
+                Console.WriteLine("7: To Retrieve by City and State Name");
+                Console.WriteLine("8: To Count by City and State Name");
                 Console.WriteLine("0: For Exit");
                 option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
@@ -105,6 +106,14 @@
                         string statename = Console.ReadLine();
                         address.State = statename;
                         addressBookDetail.GetDataFromCityAndState(address);
+                        break;
+                    case 8:
+                        Console.WriteLine("Enter city and state");
+                        string cityName = Console.ReadLine();
+                        address.City = cityName;
+                        string stateName = Console.ReadLine();
+                        address.State = stateName;
+                        addressBookDetail.CountDataFromCityAndState(address);
                         break;
                     default:
                         Console.WriteLine("Enter a Valid Input");
