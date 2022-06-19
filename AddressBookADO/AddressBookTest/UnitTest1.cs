@@ -95,5 +95,16 @@ namespace AddressBookTest
             bool actual = addressBookDetail.CountDataFromCityAndState(address);
             Assert.AreEqual(expected, actual);
         }
+        //<summary>
+        //TC 8 : Sort Details by city and state
+        //</summary>
+        [Test]
+        public void Sort_AddressBook_Details_By_CityState()
+        {
+            bool expected = true;
+            address.City = "Mumbai";
+            bool actual = addressBookDetail.SortContactByCity(address);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
